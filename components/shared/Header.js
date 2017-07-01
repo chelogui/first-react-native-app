@@ -1,17 +1,38 @@
 import React, { Component } from 'react';
+import { Header, Icon, Button } from 'react-native-elements';
 import {
   Text,
   StyleSheet,
   View
 } from 'react-native';
 
-export default class Header extends Component {
+export default class Head extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.props.toggleSideMenu();
+  }
+
   render() {
     return (
       <View style={styles.toolbar}>
-        <Text style={styles.toolbarButton}>add</Text>
+        <Button
+          icon={{name: 'dehaze'}}
+          backgroundColor='#397af8'
+          onPress={this.handleClick}
+          textStyle={styles.test}
+          style={styles.toolbarButton}
+        />
         <Text style={styles.toolbarTitle}>Achieve Languages</Text>
-        <Text style={styles.toolbarButton}>like</Text>
+        <Button
+          icon={{name: 'dehaze'}}
+          backgroundColor='#397af8'
+          style={styles.toolbarButton}
+        />
       </View>
     )
   }
@@ -21,14 +42,13 @@ export default class Header extends Component {
 const css = {
   toolbar:{
     backgroundColor:'#fff',
-    paddingTop:30,
-    paddingBottom:10,
+    marginTop:30,
     flexDirection:'row'    //step 1
   },
+  test: {
+    color: 'red'
+  },
   toolbarButton:{
-    width: 50,            //step 2
-    color:'#000',
-    textAlign:'center'
   },
   toolbarTitle:{
     color:'#000',
