@@ -27,7 +27,7 @@ export default class Head extends Component {
           textStyle={styles.test}
           style={styles.toolbarButton}
         />
-        <Text style={styles.toolbarTitle}>Achieve Languages</Text>
+        <Text style={styles.toolbarTitle}>Title of my project</Text>
         <Button
           icon={{name: 'dehaze'}}
           backgroundColor='#397af8'
